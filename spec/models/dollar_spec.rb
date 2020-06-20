@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Dollar, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it '#multiple' do
+    five = Dollar.new(5)
+    five.times(2)
+    expect(five.amount).to eq 10
+  end
 end
