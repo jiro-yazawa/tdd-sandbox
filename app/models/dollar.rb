@@ -1,0 +1,2 @@
+class Dollar < ApplicationRecord
+end
