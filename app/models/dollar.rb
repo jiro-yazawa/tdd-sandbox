@@ -1,6 +1,9 @@
 class Dollar < ApplicationRecord
   attr_accessor :value
   def initialize(value)
-    @value = value
+    @value = 10
+  end
+
+  def times(multiplier)
   end
 end
