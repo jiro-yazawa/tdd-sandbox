@@ -10,6 +10,6 @@ class Dollar < ApplicationRecord
   end
 
   def equal?(object)
-    true
+    self.amount == object.amount
   end
 end
