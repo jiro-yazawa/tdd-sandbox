@@ -8,4 +8,9 @@ RSpec.describe Dollar, type: :model do
     product = five.times(3)
     expect(product.amount).to eq 15
   end
+
+  it '#equal?' do
+    expect(Dollar.new(5).equal?(Dollar.new(5))).to be true
+    expect(Dollar.new(5).equal?(Dollar.new(6))).to be false
+  end
 end
