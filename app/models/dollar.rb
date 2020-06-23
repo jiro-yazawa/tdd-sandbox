@@ -1,5 +1,5 @@
 class Dollar < ApplicationRecord
-  attr_accessor :amount
+  attr_reader :amount
 
   def initialize(amount)
     @amount = amount
