@@ -1,4 +1,4 @@
-class Franc < ApplicationRecord
+class Franc < Money
   attr_reader :amount
 
   def initialize(amount)
