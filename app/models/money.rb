@@ -13,4 +13,6 @@ class Money < ApplicationRecord
     self.amount == money.amount && self.class.name == money.class.name
   end
 
+  def times(multiplier)
+  end
 end
