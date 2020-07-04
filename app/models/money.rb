@@ -5,7 +5,6 @@ class Money
     @amount = amount
     @currency = currency
   end
-
   def self.dollar(amount)
     return Dollar.new(amount, 'USD')
   end
@@ -19,5 +18,6 @@ class Money
   end
 
   def times(multiplier)
+    return Money.new(amount * multiplier, currency)
   end
 end
