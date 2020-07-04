@@ -1,6 +1,6 @@
 class Franc < Money
   def times(multiplier)
-    return Franc.new(amount * multiplier, 'CHF')
+    return Franc.new(amount * multiplier, currency)
   end
 
   def currency
