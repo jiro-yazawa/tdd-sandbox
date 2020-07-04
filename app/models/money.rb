@@ -1,5 +1,5 @@
-class Money < ApplicationRecord
-  attr_reader :amount
+class Money
+  attr_reader :amount, :currency
 
   def initialize(amount, currency)
     @amount = amount
@@ -7,11 +7,11 @@ class Money < ApplicationRecord
   end
 
   def self.dollar(amount)
-    return Dollar.new(amount)
+    return Dollar.new(amount, nil)
   end
 
   def self.franc(amount)
-    return Franc.new(amount)
+    return Franc.new(amount, nil)
   end
 
   def currency
