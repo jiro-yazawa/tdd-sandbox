@@ -4,8 +4,8 @@ RSpec.describe Money, type: :model do
   it '#equal?' do
     expect(Money.dollar(5).equal?(Money.dollar(5))).to be true
     expect(Money.dollar(5).equal?(Money.dollar(6))).to be false
-    expect(Money.franc(5).equal?(Franc.new(5))).to be true
-    expect(Money.franc(5).equal?(Franc.new(6))).to be false
+    expect(Money.franc(5).equal?(Money.franc(5))).to be true
+    expect(Money.franc(5).equal?(Money.franc(6))).to be false
     expect(Money.franc(5).equal?(Money.dollar(5))).to be false
   end
 
