@@ -13,6 +13,10 @@ class Money < ApplicationRecord
     return Franc.new(amount)
   end
 
+  def currency
+    raise NotImplementedError 'You must implement "currency" method'
+  end
+
   def equal?(money)
     self.amount == money.amount && self.class.name == money.class.name
   end
