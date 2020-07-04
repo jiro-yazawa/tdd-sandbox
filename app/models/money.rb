@@ -1,16 +1,21 @@
-class Money < ApplicationRecord
-  attr_reader :amount
+class Money
+  attr_reader :amount, :currency
 
-  def initialize(amount)
+  def initialize(amount, currency)
     @amount = amount
+    @currency = currency
   end
 
   def self.dollar(amount)
-    return Dollar.new(amount)
+    return Dollar.new(amount, 'USD')
   end
 
   def self.franc(amount)
-    return Franc.new(amount)
+    return Franc.new(amount, 'CHF')
+  end
+
+  def currency
+    raise NotImplementedError 'You must implement "currency" method'
   end
 
   def equal?(money)
