@@ -9,6 +9,10 @@ class Money < ApplicationRecord
     return Dollar.new(amount)
   end
 
+  def self.franc(amount)
+    return Franc.new(amount)
+  end
+
   def equal?(money)
     self.amount == money.amount && self.class.name == money.class.name
   end
