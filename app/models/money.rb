@@ -18,7 +18,7 @@ class Money
     raise NotImplementedError 'You must implement "currency" method'
   end
 
-  def equal?(money)
+  def equals?(money)
     self.amount == money.amount && self.class.name == money.class.name
   end
 
