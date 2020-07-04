@@ -7,7 +7,7 @@ class Dollar < Money
   end
 
   def times(multiplier)
-    return Money.dollar(amount * multiplier, nil)
+    return Money.dollar(amount * multiplier)
   end
 
   def currency

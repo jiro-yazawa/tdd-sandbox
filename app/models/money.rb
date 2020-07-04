@@ -7,11 +7,11 @@ class Money
   end
 
   def self.dollar(amount)
-    return Dollar.new(amount, nil)
+    return Dollar.new(amount, 'USD')
   end
 
   def self.franc(amount)
-    return Franc.new(amount, nil)
+    return Franc.new(amount, 'CHF')
   end
 
   def currency
