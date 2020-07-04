@@ -17,4 +17,9 @@ RSpec.describe Money, type: :model do
     expect(Money.franc(10).equal?(five.times(2))).to be true
     expect(Money.franc(15).equal?(five.times(3))).to be true
   end
+
+  it '#currency' do
+    expect('USD').to eq Money.dollar(1).currency
+    expect('CHF').to eq Money.franc(1).currency
+  end
 end
