@@ -14,12 +14,8 @@ class Money
     return Franc.new(amount, 'CHF')
   end
 
-  def currency
-    raise NotImplementedError 'You must implement "currency" method'
-  end
-
   def equals?(money)
-    self.amount == money.amount && self.class.name == money.class.name
+    self.amount == money.amount && self.currency == money.currency
   end
 
   def times(multiplier)
