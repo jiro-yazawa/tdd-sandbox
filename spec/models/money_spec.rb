@@ -68,15 +68,16 @@ RSpec.describe Money, type: :model do
       result = bank.reduce(five_bucks.plus(ten_francs), 'USD')
       expect(result.equals?(Money.dollar(10))).to be_truthy
     end
-
-    it 'sum plus money' do
-      five_bucks = Money.dollar(5)
-      ten_francs = Money.franc(10)
-      bank = Bank.new
-      bank.add_rate('CHF', 'USD', 2)
-      sum = Sum.new(five_bucks, ten_francs).plus(five_bucks)
-      result = bank.reduce(sum, 'USD')
-      expect(result.equals?(Money.dollar(15))).to be_truthy
-    end
   end
+
+  it 'sum plus money' do
+    five_bucks = Money.dollar(5)
+    ten_francs = Money.franc(10)
+    bank = Bank.new
+    bank.add_rate('CHF', 'USD', 2)
+    sum = Sum.new(five_bucks, ten_francs).plus(five_bucks)
+    result = bank.reduce(sum, 'USD')
+    expect(result.equals?(Money.dollar(15))).to be_truthy
+  end
+
 end
