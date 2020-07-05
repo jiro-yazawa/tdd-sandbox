@@ -39,7 +39,12 @@ RSpec.describe Money, type: :model do
       bank = Bank.new
       result = bank.reduce(sum, 'USD')
       expect(Money.dollar(7).equals?(result)).to be_truthy
+    end
 
+    it 'reduce money' do
+      bank = Bank.new
+      result = bank.reduce(Money.dollar(1), 'USD')
+      expect(Money.dollar(1).equals?(result))
     end
   end
 end
