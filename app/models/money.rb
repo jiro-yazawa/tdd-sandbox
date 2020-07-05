@@ -1,4 +1,4 @@
-class Money
+class Money < Expression
   attr_reader :amount, :currency
 
   def initialize(amount, currency)
@@ -22,6 +22,6 @@ class Money
   end
 
   def plus(addend)
-    return Money.new(amount + addend.amount, currency)
+    return Expression.new(amount + addend.amount, currency)
   end
 end
