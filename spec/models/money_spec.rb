@@ -89,4 +89,9 @@ RSpec.describe Money, type: :model do
     result = bank.reduce(sum, 'USD')
     expect(result.equals?(Money.dollar(20))).to be_truthy
   end
+
+  it 'plus same currency returns money' do
+    sum = Money.dollar(1).plus(Money.dollar(1))
+    expect(sum.instance_of?(Money)).to be_truthy
+  end
 end
