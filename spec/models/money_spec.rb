@@ -18,11 +18,33 @@ RSpec.describe Money, type: :model do
     expect('CHF').to eq Money.franc(1).currency
   end
 
-  it '#plus' do
-    five = Money.dollar(5)
-    sum = five.plus(five)
-    bank = Bank.new
-    reduced = bank.reduce(sum, 'USD')
-    expect(Money.dollar(10).equals?(reduced)).to be true
+  describe '#plus' do
+    it 'will succeed' do
+      five = Money.dollar(5)
+      sum = five.plus(five)
+      bank = Bank.new
+      reduced = bank.reduce(sum, 'USD')
+      expect(Money.dollar(10).equals?(reduced)).to be true
+    end
+
+    it 'plus returns sum' do
+      five = Money.dollar 5
+      sum = five.plus(five)
+      expect(five.equals?(sum.augend)).to be_truthy
+      expect(five.equals?(sum.addend)).to be_truthy
+    end
+
+    it 'reduce sum' do
+      sum = Sum.new(Money.dollar(3), Money.dollar(4))
+      bank = Bank.new
+      result = bank.reduce(sum, 'USD')
+      expect(Money.dollar(7).equals?(result)).to be_truthy
+    end
+
+    it 'reduce money' do
+      bank = Bank.new
+      result = bank.reduce(Money.dollar(1), 'USD')
+      expect(Money.dollar(1).equals?(result))
+    end
   end
 end

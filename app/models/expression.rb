@@ -1,8 +1,5 @@
 class Expression
-  attr_reader :amount, :currency
-
-  def initialize(amount, currency)
-    @amount = amount
-    @currency = currency
+  def reduce(to)
+    raise NotImplementedError
   end
 end
