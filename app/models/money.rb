@@ -1,10 +1,4 @@
 class Money < Expression
-  attr_reader :amount, :currency
-
-  def initialize(amount, currency)
-    @amount = amount
-    @currency = currency
-  end
   def self.dollar(amount)
     return Money.new(amount, 'USD')
   end
