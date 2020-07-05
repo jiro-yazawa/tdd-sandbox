@@ -19,7 +19,7 @@ RSpec.describe Money, type: :model do
   end
 
   it '#plus' do
-    five = Money.dollar(five)
+    five = Money.dollar(5)
     sum = five.plus(five)
     bank = Bank.new
     reduced = bank.reduce(sum, 'USD')
