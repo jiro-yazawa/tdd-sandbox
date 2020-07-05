@@ -23,6 +23,6 @@ class Money < Expression
   end
 
   def plus(addend)
-    return Expression.new(amount + addend.amount, currency)
+    return Sum.new(self, addend)
   end
 end
