@@ -19,7 +19,10 @@ RSpec.describe Money, type: :model do
   end
 
   it '#plus' do
-    sum = Money.dollar(5).plus(Money.dollar(5))
-    expect(Money.dollar(10).equals?(sum)).to be true
+    five = Money.dollar(five)
+    sum = five.plus(five)
+    bank = Bank.new
+    reduced = bank.reduce(sum, 'USD')
+    expect(Money.dollar(10).equals?(reduced)).to be true
   end
 end
