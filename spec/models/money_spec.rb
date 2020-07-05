@@ -17,4 +17,9 @@ RSpec.describe Money, type: :model do
     expect('USD').to eq Money.dollar(1).currency
     expect('CHF').to eq Money.franc(1).currency
   end
+
+  it '#plus' do
+    sum = Money.dollar(5).plus(Money.dollar(5))
+    expect(Money.dollar(10)).to eq sum
+  end
 end
