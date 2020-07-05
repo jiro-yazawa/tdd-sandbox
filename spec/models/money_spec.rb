@@ -20,6 +20,6 @@ RSpec.describe Money, type: :model do
 
   it '#plus' do
     sum = Money.dollar(5).plus(Money.dollar(5))
-    expect(Money.dollar(10)).to eq sum
+    expect(Money.dollar(10).equals?(sum)).to be true
   end
 end
