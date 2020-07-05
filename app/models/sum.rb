@@ -7,7 +7,7 @@ class Sum < Expression
   end
 
   def plus(addend)
-    # TODO
+    return Sum.new(self, addend)
   end
 
    def reduce(bank, to)
