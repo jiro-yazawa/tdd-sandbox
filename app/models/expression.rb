@@ -1,5 +1,5 @@
 class Expression
-  def reduce(to)
+  def reduce(bank, to)
     raise NotImplementedError
   end
 end

@@ -4,6 +4,6 @@ class Bank
   end
 
   def reduce(sum, to)
-    sum.reduce(to)
+    sum.reduce(self, to)
   end
 end
