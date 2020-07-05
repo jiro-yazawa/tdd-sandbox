@@ -7,7 +7,7 @@ RSpec.describe Money, type: :model do
     expect(Money.franc(5).equals?(Money.dollar(5))).to be false
   end
 
-  it '#multiple' do
+  it '#times' do
     five = Money.dollar(5)
     expect(Money.dollar(10).equals?(five.times(2))).to be true
     expect(Money.dollar(15).equals?(five.times(3))).to be true
