@@ -33,7 +33,9 @@ RSpec.describe Money, type: :model do
       expect(five.equals?(sum.augend)).to be_truthy
       expect(five.equals?(sum.addend)).to be_truthy
     end
+  end
 
+  describe '#reduce' do
     it 'reduce sum' do
       sum = Sum.new(Money.dollar(3), Money.dollar(4))
       bank = Bank.new
