@@ -6,11 +6,11 @@ class Money
     @currency = currency
   end
   def self.dollar(amount)
-    return Dollar.new(amount, 'USD')
+    return Money.new(amount, 'USD')
   end
 
   def self.franc(amount)
-    return Franc.new(amount, 'CHF')
+    return Money.new(amount, 'CHF')
   end
 
   def equals?(money)
